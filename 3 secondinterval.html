@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<!-- <head> -->
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+body {text-align: center;}
+body {font-size: xx-large;}
+
+</style>
+<!-- </head> -->
+<body>
+
+<h1>Clock </h1>
+<h2><p>3 Second Interval</p></h2>
+<h2 id="demo"></h2>
+
+<script>
+function timeNow() {
+    let date = new Date(); 
+    let hh = date.getHours();
+    let mm = date.getMinutes();
+    let ss = date.getSeconds();
+    let amOrpm = "AM";
+  
+      
+    if(hh > 12){
+        amOrpm = "PM";
+     }
+  
+     hh = (hh < 10) ? "0" + hh : hh;
+     mm = (mm < 10) ? "0" + mm : mm;
+     ss = (ss < 10) ? "0" + ss : ss;
+      
+     let time = hh + ":" + mm + ":" + ss + " " + amOrpm;
+  
+    document.getElementById("demo").innerText = time; 
+    var t = setTimeout(function(){ timeNow() }, 3000); 
+     }
+  
+  timeNow();
+    
+
+
+</script>
+
+</body>
+</html>
